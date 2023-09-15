@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쥴리 생일 카운트다운</title>
+    <style>
+        /* 배경 이미지 설정 */
+        @font-face {
+    font-family: 'NanumSquareRoundEB';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf) format("truetype");
+}
+        @font-face {
+                    font-family: "font";
+                    src: url("NeoDunggeunmoPro-Regular.woff2") format("woff2"),
+                         url("NeoDunggeunmoPro-Regular.woff") format("woff");
+                    font-weight: normal;
+                    font-style: normal;
+                   }
+        body {
+            background-image: url('your-fireworks-image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* 카운트다운 스타일 */
+        #countdown {
+            font-size: 100px;
+            color: white;
+            text-align: center;
+            margin-top: 200px;
+            -webkit-text-stroke: 5px black;
+            font-family: 'NanumSquareRoundEB';
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown"></div>
+
+    <script>
+        // 목표 날짜 설정 (2023년 9월 28일)
+        const targetDate = new Date('2023-09-28T00:00:00').getTime();
+
+        // 타이머 업데이트 함수
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeLeft = targetDate - currentDate;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남음`;
+        }
+
+        // 1초마다 업데이트
+        setInterval(updateCountdown, 1000);
+
+        // 초기 로드 시 업데이트
+        updateCountdown();
+    </script>
+</body>
+</html>
