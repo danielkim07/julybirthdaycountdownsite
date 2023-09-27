@@ -1,5 +1,56 @@
 <!DOCTYPE html>
 <html>
-		 
-    <meta http-equiv="refresh" content="0; url=j/u/l/y/b/i/r/t/h/d/a/y">리다이렉트중..</meta>
+<head>
+    <style>
+        @font-face {
+    font-family: 'NanumSquareRoundEB';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf) format("truetype");
+}
+
+        body {
+            background-image: url('fireworks.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'NanumSquareRoundEB';
+        }
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h1, p {
+          
+          color: white; 
+          text-shadow:
+           -1px -1px 0 #000,
+           1px -1px 0 #000,
+           -1px 1px 0 #000,
+           1px 1px 0 #000;  
+           
+          
+        }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var currentDate = new Date();
+          if (currentDate.getDate() === 28 && currentDate.getMonth() === 8) { // Months are zero-based
+              document.getElementById('birthday').style.display = 'block';
+              document.body.style.backgroundImage = "url('fireworks.gif')";
+          }
+      });
+    </script>
+
+</head>
+<body>
+
+<div class="center" id="birthday">
+    <h1>생일축하합니다!</h1>
+    <p>와 추석연휴 샌즈하다!</p>
+</div>
+
+</body>
 </html>
